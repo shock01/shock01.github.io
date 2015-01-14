@@ -30,7 +30,6 @@ var oig;
      * <div is="oig-context" data-view-model="">
      *
      * @type {HTMLElement}
-     * @lends {HTMLDivElement.prototype}
      */
     var ContextElement = Object.create(HTMLDivElement.prototype, {
 
@@ -91,5 +90,5 @@ var oig;
       prototype: ContextElement,
       extends: 'div'
     });
-  })(elements = oig.elements || (oig.elements = {}));
-})(oig || (oig = {}));
+  })/* jshint ignore:start */(elements = oig.elements || (oig.elements = {})/* jshint ignore:end */);
+})/* jshint ignore:start */(oig || (oig = {})/* jshint ignore:end */);

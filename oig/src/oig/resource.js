@@ -12,12 +12,15 @@ var oig;
           var xhr = new XMLHttpRequest;
           xhr.open('GET', url, true);
           xhr.onload = function () {
-            resolve(xhr.responseText);
-          }
+            if (xhr.status >= 200 && xhr.status < 300) {
+              resolve(xhr.responseText);
+            } else {
+              reject(xhr.responseText);
+            }
+          };
           xhr.send(null);
         });
       }
     };
   };
-})
-(oig || (oig = {}));
+})/* jshint ignore:start */(oig || (oig = {})/* jshint ignore:end */);
