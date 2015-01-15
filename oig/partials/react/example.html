@@ -13,7 +13,7 @@
          * @return {XML}
          */
         render: function render() {
-          return (React.createElement("div", null, "React says: Clicked ",  this.props.count, " times!!!"));
+          return (React.createElement("div", null, "React says: Clicked ",  this.state ? this.state.count : 0, " times!!!"));
         }
       });
 

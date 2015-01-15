@@ -31,16 +31,17 @@ var oig;
       update: {
         value: function () {
           var dataContext = this.dataContext,
+            state,
             reactComponent = this.reactComponent,
             context = this.getAttribute('context');
 
           if (typeof context === 'string' && context.trim().length > 0) {
-            reactComponent.props = oig.evaluate(dataContext, context);
+            state = oig.evaluate(dataContext, context);
           } else {
-            reactComponent.props = dataContext;
+            state = dataContext;
           }
 
-          React.render(reactComponent, this);
+          React.render(reactComponent, this).setState(state);
         }
       },
       /**
