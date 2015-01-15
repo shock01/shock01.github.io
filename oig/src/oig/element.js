@@ -22,7 +22,7 @@ var oig;
    * observes the datacontext and registers the element in the
    *
    * observerMap
-   * @param {IfElement} element
+   * @param {ContextElement} element
    */
   function observeDataContext(element) {
     // watch dataContext changes
@@ -70,7 +70,6 @@ var oig;
      */
     attachedCallback: {
       value: function () {
-        this.update();
         if (!attributeTruthy(this.getAttribute('once'))) {
           observeDataContext(this);
         }

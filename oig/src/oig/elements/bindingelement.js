@@ -43,7 +43,6 @@ var oig;
      * or when specified the oig-target
      * <oig-binding data-oig-target="previousSibling|nextSibling"/>
      *
-     * @type {HTMLElement}
      */
     var BindingElement = {
       /**
@@ -108,6 +107,7 @@ var oig;
           if (!attributeTruthy(this.getAttribute('once'))) {
             observeDOM(this);
           }
+          this.update();
         }
       },
       /**

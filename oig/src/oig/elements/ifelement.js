@@ -3,10 +3,18 @@ var oig;
   'use strict';
   var elements;
   (function (elements) {
-    /**
-     * @type {HTMLElement}
-     */
+
     var IfElement = {
+      /**
+       * when attached to the DOM and attribute once is not thruthy then
+       * add observers
+       */
+      attachedCallback: {
+        value: function () {
+          oig.ContextElement.prototype.attachedCallback.call(this);
+          this.update();
+        }
+      },
       update: {
         value: function () {
           var test = this.getAttribute('test'),

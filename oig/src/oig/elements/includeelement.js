@@ -44,8 +44,6 @@ var oig;
      * If an error occurs the fallback element will be shown
      *
      * Inclusion of SVG content need to make sure to set the namespace on the SVGSVGElement (http://www.w3.org/2000/svg)
-     *
-     * @type {HTMLElement}
      */
     var IncludeElement = Object.create(HTMLDivElement.prototype, {
       /**
@@ -102,8 +100,7 @@ var oig;
               } catch (e) {
                 throw e;
               }
-            },
-            function (/**Error*/error) {
+            }).catch(function (/**Error*/error) {
               if (fallback instanceof HTMLTemplateElement) {
                 element.parentNode.replaceChild(element.ownerDocument.importNode(fallback.content, true), element);
               } else {
