@@ -1283,7 +1283,7 @@ function getCompositionEventType(topLevelType) {
 }
 
 /**
- * Does our fallback best-guess model think this event signifies that
+ * Does our fallback best-guess models think this event signifies that
  * composition has begun?
  *
  * @param {string} topLevelType

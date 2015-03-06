@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Audio Demo</title>
+  <script src="oig.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+  (function () {
+    var viewModel = {name: 'Audio Project'};
+    Object.defineProperty(oig.viewModels, 'audio', {
+      get: function () {
+        return viewModel;
+      }
+    });
+  }())
+</script>
+<div is="oig-context" data-view-model="audio">
+
+  <h1><oig-binding once>name</oig-binding></h1>
+
+</div>
+
+</body>
+</html>
