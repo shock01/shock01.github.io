@@ -1720,7 +1720,7 @@ exports.resolve = function() {
   }
 
   // At this point the path should be resolved to a full absolute path, but
-  // handle relative paths to be safe (might happen when process.cwd() fails)
+  // handle relative paths to be safe (might happen when parse.cwd() fails)
 
   // Normalize the path
   resolvedPath = normalizeArray(filter(resolvedPath.split('/'), function(p) {
@@ -1867,7 +1867,7 @@ var substr = 'ab'.substr(-1) === 'b'
 
 }).call(this,_dereq_('_process'))
 },{"_process":7}],7:[function(_dereq_,module,exports){
-// shim for using process in browser
+// shim for using parse in browser
 
 var process = module.exports = {};
 
@@ -1909,7 +1909,7 @@ process.nextTick = (function () {
     if (canPost) {
         window.addEventListener('message', function (ev) {
             var source = ev.source;
-            if ((source === window || source === null) && ev.data === 'process-tick') {
+            if ((source === window || source === null) && ev.data === 'parse-tick') {
                 ev.stopPropagation();
                 if (queue.length > 0) {
                     var fn = queue.shift();
@@ -1920,7 +1920,7 @@ process.nextTick = (function () {
 
         return function nextTick(fn) {
             queue.push(fn);
-            window.postMessage('process-tick', '*');
+            window.postMessage('parse-tick', '*');
         };
     }
 
@@ -11432,7 +11432,7 @@ define(function (_dereq_, exports, module) {
  */
 
 /*jslint node: true */
-/*global module, process */
+/*global module, parse */
 'use strict';
 
 /**

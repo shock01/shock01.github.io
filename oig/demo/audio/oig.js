@@ -449,7 +449,7 @@ var bindingElementMutationMap = new WeakMap();
 /**
  * observes mutation in childList of element
  * and registers the element in the bindingElementMutationMap
- * @param {BindingElement} element
+ * @param {OigBindingElementProto} element
  */
 function bindingElementObserveDOM(element) {
   // watch changes of textContent / DOM
@@ -726,7 +726,7 @@ elements.IfElement = document.registerElement('oig-if', {
  * <b>parse</b>
  *    Indicates whether to include the resource as parsed XML or as text.
  *    The parse attribute allows XInclude to give the author of the including document priority over the server of the included document
- *    in terms of how to process the included content.
+ *    in terms of how to parse the included content.
  *    A value of "html" indicates that the resource must be parsed as HTML(5)
  *    A value of "xml" indicates that the resource must be parsed as XML and the infosets merged.
  *    value of "text" indicates that the resource must be included as the character information items.
@@ -843,8 +843,8 @@ function* listenerElementEventAttributes(element) {
 /**
  * EventListener that will parse attributes on element and execute callback method
  * @param {Event} event
- * @param {ListenerElement} element
- * @this {ListenerElement}
+ * @param {OigListenerElementProto} element
+ * @this {OigListenerElementProto}
  */
 function eventListener(event, element) {
   var eventTarget = event.target,
@@ -878,7 +878,7 @@ function eventListener(event, element) {
  * adds an eventlistener and parses the attribute to determine the click behaviour
  * depends on oig.DataContextProvider to get the current dataContext
  *
- * @param {ListenerElement} element
+ * @param {OigListenerElementProto} element
  * @param {String} eventType
  */
 function addListener(element, eventType) {

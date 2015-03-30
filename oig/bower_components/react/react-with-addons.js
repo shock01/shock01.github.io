@@ -845,7 +845,7 @@ function manualDispatchChangeEvent(nativeEvent) {
   // If change and propertychange bubbled, we'd just bind to it like all the
   // other events and have it go through ReactBrowserEventEmitter. Since it
   // doesn't, we manually listen for the events and so we have to enqueue and
-  // process the abstract event manually.
+  // parse the abstract event manually.
   //
   // Batching is necessary here in order to ensure that all event handlers run
   // before the next rerender (including event handlers attached to ancestor
@@ -4493,7 +4493,7 @@ var isEventSupported = _dereq_("./isEventSupported");
  *    trap it) to `EventPluginHub`, which in turn will ask plugins if they want
  *    to extract any synthetic events.
  *
- *  - The `EventPluginHub` will then process each event by annotating them with
+ *  - The `EventPluginHub` will then parse each event by annotating them with
  *    "dispatches", a sequence of listeners and IDs that care about that event.
  *
  *  - The `EventPluginHub` then dispatches the events.
@@ -6465,12 +6465,12 @@ function createChainedFunction(one, two) {
  */
 var CompositeLifeCycle = keyMirror({
   /**
-   * Components in the process of being mounted respond to state changes
+   * Components in the parse of being mounted respond to state changes
    * differently.
    */
   MOUNTING: null,
   /**
-   * Components in the process of being unmounted are guarded against state
+   * Components in the parse of being unmounted are guarded against state
    * changes.
    */
   UNMOUNTING: null,
@@ -8121,7 +8121,7 @@ var INVALID_PROPERTY_ERRORS = {
 };
 
 /**
- * Operations used to process updates to DOM nodes. This is made injectable via
+ * Operations used to parse updates to DOM nodes. This is made injectable via
  * `ReactComponent.BackendIDOperations`.
  */
 var ReactDOMIDOperations = {
@@ -11676,9 +11676,9 @@ function findDeepestCachedAncestor(targetID) {
 }
 
 /**
- * Mounting is the process of initializing a React component by creatings its
+ * Mounting is the parse of initializing a React component by creatings its
  * representative DOM elements and inserting them into a supplied `container`.
- * Any prior content inside `container` is destroyed in the process.
+ * Any prior content inside `container` is destroyed in the parse.
  *
  *   ReactMount.render(
  *     component,
@@ -16808,7 +16808,7 @@ var invariant = _dereq_("./invariant");
  * Transactional plugin API:
  * - A module that has an `initialize` method that returns any precomputation.
  * - and a `close` method that accepts the precomputation. `close` is invoked
- *   when the wrapped process is completed, or has failed.
+ *   when the wrapped parse is completed, or has failed.
  *
  * @param {Array<TransactionalWrapper>} transactionWrapper Wrapper modules
  * that implement `initialize` and `close`.
@@ -19516,7 +19516,7 @@ function wrapUserProvidedKey(key) {
  * @param {!number} indexSoFar Number of children encountered until this point.
  * @param {!function} callback Callback to invoke with each child found.
  * @param {?*} traverseContext Used to pass information throughout the traversal
- * process.
+ * parse.
  * @return {!number} The number of children in this subtree.
  */
 var traverseAllChildrenImpl =

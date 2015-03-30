@@ -1,15 +1,14 @@
 <div>
   <script type="text/javascript">
     (function () {
-      var viewModel = {
-        name: 'I am a templated viewModel',
-        items: [{id: 0, name: "John Doe"}, {id: 1, name: "Jane Doe"}]
-      };
-      Object.defineProperty(oig.viewModels, 'template', {
-        get: function () {
-          return viewModel;
-        }
-      });
+
+      function ViewModel() {
+        this.name = 'I am a templated viewModel';
+        this.items = [{id: 0, name: "John Doe"}, {id: 1, name: "Jane Doe"}];
+      }
+
+      oig.bind('template').to(ViewModel).asNew();
+
     }())
   </script>
   <div is="oig-context" data-view-model="template">
@@ -56,3 +55,4 @@
       </div>
     </div>
   </div>
+</div>
